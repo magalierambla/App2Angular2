@@ -1,17 +1,16 @@
-import { Component, OnInit, ElementRef, ViewChild, EventEmitter } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Title } from '@angular/platform-browser';
-import { apiHttpSpringBootService } from './../api-spring-boot.service';
-import { CookieService } from 'ngx-cookie-service';
-import { DatePipe } from '@angular/common';
-import { NgxUiLoaderService } from 'ngx-ui-loader';
+import {Component, OnInit, ElementRef, ViewChild, EventEmitter} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Title} from '@angular/platform-browser';
+import {apiHttpSpringBootService} from './../api-spring-boot.service';
+import {CookieService} from 'ngx-cookie-service';
+import {DatePipe} from '@angular/common';
+import {NgxUiLoaderService} from 'ngx-ui-loader';
 import {UserModel} from '../interfaces/models';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 // https://medium.com/letsboot/lets-pick-a-date-with-ng2-datepicker-1ba2d9593a66
 
 declare var window: any;
-
 
 
 @Component({
@@ -21,7 +20,7 @@ declare var window: any;
 })
 export class IdentificationComponent implements OnInit {
 
-  @ViewChild('recaptcha', { static: true }) recaptchaElement: ElementRef;
+  @ViewChild('recaptcha', {static: true}) recaptchaElement: ElementRef;
 
   datePickerConfig = {
     drops: 'up',
@@ -34,7 +33,6 @@ export class IdentificationComponent implements OnInit {
     emailLogin: '',
     passwordLogin: ''
   };
-
 
 
   public infosUser: UserModel = new UserModel();
@@ -56,7 +54,6 @@ export class IdentificationComponent implements OnInit {
   events: string[] = [];
 
 
-
   constructor(private route: ActivatedRoute, private router: Router, private apiService: apiHttpSpringBootService,
               private cookie: CookieService, private datePipe: DatePipe, private ngxService: NgxUiLoaderService,
               private titleService: Title) {
@@ -67,11 +64,10 @@ export class IdentificationComponent implements OnInit {
 
       if (params.deconnection) {
 
-           // alert(params.deconnection);
+        // alert(params.deconnection);
 
-           this.Logout();
+        this.Logout();
       }
-
 
 
     });
@@ -82,11 +78,11 @@ export class IdentificationComponent implements OnInit {
 
     /********************************************************* */
 
-   this.addRecaptchaScript();
+    this.addRecaptchaScript();
 
-   const date = new Date();
+    const date = new Date();
 
-   this.ObjetInscription.date_created = date.toLocaleString('fr-FR', {
+    this.ObjetInscription.date_created = date.toLocaleString('fr-FR', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
@@ -98,11 +94,9 @@ export class IdentificationComponent implements OnInit {
     });
 
 
-
   }
 
   addEventDateNaissance(event) {
-
 
 
     const date = new Date();
@@ -132,10 +126,14 @@ export class IdentificationComponent implements OnInit {
       this.renderReCaptcha();
     };
 
-    (function(d, s, id, obj) {
+    (function (d, s, id, obj) {
       let js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) { obj.renderReCaptcha(); return; }
-      js = d.createElement(s); js.id = id;
+      if (d.getElementById(id)) {
+        obj.renderReCaptcha();
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
       js.src = 'https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&amp;render=explicit';
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'recaptcha-jssdk', this));
@@ -157,16 +155,16 @@ export class IdentificationComponent implements OnInit {
 
   public onFormSubmitLogin() {
 
-   /* this.cookie.set('infosConnectionUser', JSON.stringify(this.ObjetLogin));
+    /* this.cookie.set('infosConnectionUser', JSON.stringify(this.ObjetLogin));
 
-    this.router.navigate(['/captcha-identification']); */
+     this.router.navigate(['/captcha-identification']); */
 
     this.ngxService.start();
 
 
     this.apiService.identificationUser(this.ObjetLogin).subscribe((dataUser: UserModel) => {
-
-      // console.log('IdentificationComponent/identification', dataUser);
+      console.log('authenticated');
+      console.log(dataUser);
 
       if (!dataUser) {
 
@@ -187,10 +185,12 @@ export class IdentificationComponent implements OnInit {
       this.ngxService.stop();
 
 
-    }, (error: any) => { });
+    }, (error: any) => {
+      console.log(error);
+      console.log(error);
+    });
 
   }
-
 
 
   public onFormSubmitInscription() {
@@ -198,38 +198,31 @@ export class IdentificationComponent implements OnInit {
 
     this.ObjetInscription.typeCompte = 'user';
 
-    if (this.ObjetInscription.sex === 'H'){
+    if (this.ObjetInscription.sex === 'H') {
 
 
-         this.ObjetInscription.photoUser = './assets/img/users/user_m.png';
+      this.ObjetInscription.photoUser = './assets/img/users/user_m.png';
 
-    }else{
+    } else {
 
 
-        this.ObjetInscription.photoUser = './assets/img/users/user_f.png';
+      this.ObjetInscription.photoUser = './assets/img/users/user_f.png';
 
     }
 
-
-    // console.log('this.isvalidCaptcha = ', this.isvalidCaptcha);
-
-    // console.log('!this.isErreurInscription = ', !this.isErreurInscription);
-
-
     if (this.isvalidCaptcha && !this.isErreurInscription) {
 
-    this.ngxService.start();
+      this.ngxService.start();
 
-    this.apiService.inscriptionUser(this.ObjetInscription).subscribe((dataUser: UserModel) => {
-
-        // console.log('inscriptionUser', dataUser);
+      this.apiService.inscriptionUser(this.ObjetInscription).subscribe((dataUser: UserModel) => {
 
         if (!dataUser) {
 
           this.isErreurInscription = true;
 
         } else {
-
+          // save user to localstorage
+          localStorage.setItem('user', JSON.stringify(dataUser));
           this.infosUser = dataUser;
 
           this.cookie.set('infosUser', JSON.stringify(this.infosUser));
@@ -240,32 +233,29 @@ export class IdentificationComponent implements OnInit {
         }
 
 
-
-
       }, (error: any) => {
 
       });
 
-    this.ngxService.stop();
+      this.ngxService.stop();
 
     }
 
   }
 
-  Logout(){
+  Logout() {
 
-     // this.cookie.deleteAll();
+    // this.cookie.deleteAll();
 
     this.cookie.delete('infosUser'); // supression-cookie
 
 
   }
 
-  tinyAlert(message: string){
+  tinyAlert(message: string) {
 
     Swal.fire(message);
-}
-
+  }
 
 
 }
