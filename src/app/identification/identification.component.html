@@ -2,7 +2,7 @@
 <div class="container login-container">
             <div class="row">
 
-           
+
                 <div class="col-md-6 login-form-1">
                     <h3>Identification</h3>
 
@@ -11,28 +11,33 @@
                      </div>
 
                     <form   class="form-horizontal" #loginForm = "ngForm"  (ngSubmit)="onFormSubmitLogin()">
-                    
+
                         <div class="form-group">
-                            <input type="text" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Your Email *" [(ngModel)] = "ObjetLogin.emailLogin"  name="emailLogin" required value="" />
+                            <input type="text" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                                   placeholder="Your Email *"
+                                   [(ngModel)] = "ObjetLogin.emailLogin"
+                                   name="emailLogin"
+                                   id="emailLogin"
+                                   required value="" />
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" placeholder="Your Password *"  [(ngModel)] = "ObjetLogin.passwordLogin"   name="passwordLogin"   required value="" />
-                        </div>                      
-                         
+                        </div>
+
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary" [disabled]="!loginForm.form.valid">Login</button>
                         </div>
                         <div class="form-group">
-                            <a href="#" class="btnForgetPwd">Forget Password?</a> 
+                            <a href="#" class="btnForgetPwd">Forget Password?</a>
                         </div>
 
-                    </form>   
-                    
+                    </form>
+
                 </div>
 
-             
-           
-         
+
+
+
                 <div class="col-md-6 login-form-2">
 
                     <div class="login-logo">
@@ -56,7 +61,7 @@
                         <input type="text" class="form-control" [(ngModel)] = "ObjetInscription.nom" name = "nomInscription" placeholder="votre nom *" required value="" />
 
                     </div>
-        
+
                     <div class="form-group">
 
                         <input type="text" class="form-control" [(ngModel)] = "ObjetInscription.prenom" name = "prenomInscription" placeholder="votre prenom *" required value="" />
@@ -66,25 +71,25 @@
                     <div class="control-group form-group">
 
                         <div class="controls">
-                         
-                          <select class="form-control"  [(ngModel)] = "ObjetInscription.sex" name="sexInscription" required value="">
-              
-                                  <option  value="">Selectionner votre sex</option>                                
-                                  
-                                  <option  value="H" >Homme</option> 
-              
-                                  <option  value="F" >Femme</option> 
 
-                          </select> 
+                          <select class="form-control"  [(ngModel)] = "ObjetInscription.sex" name="sexInscription" required value="">
+
+                                  <option  value="">Selectionner votre sex</option>
+
+                                  <option  value="H" >Homme</option>
+
+                                  <option  value="F" >Femme</option>
+
+                          </select>
 
                         </div>
-                        
+
                       </div>
 
                     <div class="form-group">
                         <input type="text" class="form-control" [(ngModel)] = "ObjetInscription.pseudo_name" name = "pseudo_nameInscription" placeholder="votre pseudo-name *" required value="" />
-                    </div> 
-        
+                    </div>
+
                     <div class="form-group">
                         <input type="text" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)] = "ObjetInscription.login" name = "emailInscription" placeholder="Your Email *" required value="" />
                     </div>
@@ -92,12 +97,12 @@
                         <input type="password" class="form-control" [(ngModel)] = "ObjetInscription.password" name = "passwordInscription" placeholder="Your Password *" required value="" />
                     </div>
 
-                    <div class="form-group">                   
+                    <div class="form-group">
 
-                      <dp-date-picker  placeholder ="date de naissance"    (onChange)="addEventDateNaissance($event)"  required="true"  [config]="datePickerConfig"></dp-date-picker>  
-                      
+                      <dp-date-picker  placeholder ="date de naissance"    (onChange)="addEventDateNaissance($event)"  required="true"  [config]="datePickerConfig"></dp-date-picker>
 
-                    </div>                 
+
+                    </div>
 
                     <div class="control-group form-group">
 
@@ -107,14 +112,14 @@
                       <div class="alert alert-danger"  *ngIf="isErreurCaptcha">
                         <strong>Erreur!</strong>  Veuillez valider votre captcha
                      </div>
-                     
+
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary" [disabled]="!inscriptionForm.form.valid">Inscription</button>
                     </div>
-                </form>  
+                </form>
                 </div>
 
-           
+
 
         </div>
 </div>

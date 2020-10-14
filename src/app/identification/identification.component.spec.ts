@@ -52,6 +52,11 @@ describe('IdentificationComponent', () => {
        expect(app).toBeTruthy();
     });
 
+    it('should have email input', ()=>{
+      const emailEl: HTMLElement = fixture.nativeElement.querySelector('#emailLogin');
+
+    });
+
 
 
 
