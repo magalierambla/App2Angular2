@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { apiHttpSpringBootService } from './../api-spring-boot.service';
 import { UserModel } from '../interfaces/models';
 import { Type } from '@angular/core';
+import { emit } from 'process';
 export function getBaseUrl() {
   return document.getElementsByTagName('base')[0].href;
 }
@@ -53,7 +54,13 @@ describe('IdentificationComponent', () => {
     });
 
     it('should have email input', ()=>{
-      const emailEl: HTMLElement = fixture.nativeElement.querySelector('#emailLogin');
+     // const emailEl: HTMLElement = fixture.nativeElement.querySelector('#emailLogin');
+     const email: HTMLElement = fixture.nativeElement.querySelector("#emailLogin");
+     console.log('email...........................');
+     //console.log(email[0]);
+     //expect( email[0].innerHTML).toBeDefined();
+     //expect(email[0].innerHTML).toContain('@');
+     //expect(email[0].innerHTML.length).toBeGreaterThan(3);
 
     });
 
