@@ -1,13 +1,13 @@
 ### STAGE 1: Build ###
-#FROM node:12.7-alpine AS build
-#WORKDIR /usr/src/app
-#COPY package.json package-lock.json ./
-#RUN npm install
-#COPY . .
-#RUN npm run build
+FROM node:12.7-alpine AS build
+WORKDIR /
+COPY package.json package-lock.json ./
+RUN npm install
+COPY . .
+RUN npm run build
 
 ### STAGE 2: Run ###
 FROM nginx:1.17.1-alpine
-#RUN ls -la
 #COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./dist/crowdfunding-app  /usr/share/nginx/html
+RUN ls -l
+COPY --from=build /dist/crowdfunding-app  /usr/share/nginx/html
