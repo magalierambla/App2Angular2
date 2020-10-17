@@ -25,7 +25,7 @@ declare var window: any;
 })
 export class ProjectEditCompanyOwnerComponent implements OnInit {
 
- @ViewChild('recaptcha', {static: true }) recaptchaElement: ElementRef;
+ //@ViewChild('recaptcha', {static: true }) recaptchaElement: ElementRef;
 
   public infosUser: UserModel = new UserModel();
 
@@ -169,7 +169,7 @@ export class ProjectEditCompanyOwnerComponent implements OnInit {
 
   ngOnInit(): void {
 
-   
+
     this.updateProjectForm = this.formBuilder.group({
                                                    nomProject: [ '', Validators.required],
                                                   // descriptionProject: ['', Validators.required],
@@ -181,9 +181,9 @@ export class ProjectEditCompanyOwnerComponent implements OnInit {
                                                    //  contrePartieProject: ['', Validators.required],
                          });
 
-    this.addRecaptchaScript();
+    //this.addRecaptchaScript();
 
-   
+
   }
 
   onChangeDateLimiteCollecte(event){
@@ -420,7 +420,7 @@ export class ProjectEditCompanyOwnerComponent implements OnInit {
 
         //  this.ObjetProjectTemplate.project = dataPorject;
 
-          this.ObjetProject =  dataPorject;        
+          this.ObjetProject =  dataPorject;
 
           if (this.ObjetProject.contrePartieProject === 'Du concret'){
 
@@ -455,7 +455,7 @@ export class ProjectEditCompanyOwnerComponent implements OnInit {
 
     }
 
-    addRecaptchaScript() {
+    /*addRecaptchaScript() {
 
       window.grecaptchaCallback = () => {
         this.renderReCaptcha();
@@ -482,7 +482,7 @@ export class ProjectEditCompanyOwnerComponent implements OnInit {
             this.isErreurCaptcha = false;
         }
       });
-    }
+    }*/
 
 
 

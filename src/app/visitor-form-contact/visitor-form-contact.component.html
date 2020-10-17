@@ -26,20 +26,20 @@
        <!--  <form [formGroup]="contactForm" (ngSubmit)="onFormSubmitContactBis()">
             <div class="form-group">
               <input type="text" class="form-control" [(ngModel)]="ObjetFormCotact.email" formControlName="email"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"      placeholder="votre adresse e-mail *" />
-           
+
               <div  *ngIf="submitted && f.email.errors" class="invalid-feedback">
                 <div *ngIf="f.email.errors.required" >Email is required</div>
                 <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-              </div>           
+              </div>
             </div>
 
-           
+
 
             <div class="text-center">
               <button class="btn btn-primary mr-1">Envoyer</button>
             </div>
 
-          </form>--> 
+          </form>-->
           <!----------------------------------------------------------------------------------------------->
 
          <form [formGroup]="contactForm" (ngSubmit)="onFormSubmitContact()">
@@ -66,12 +66,12 @@
                       <div *ngIf="f.email.errors.required" >Le champ email est important !!!</div>
                       <div *ngIf="f.email.errors.email" >Le format de e-mail est invalide</div>
                     </div>
-                </div>               
+                </div>
 
-               
+
               </div>
             </div>
-           
+
 
             <div class="card mb-4 py-3 border-left-primary">
               <div class="card-body">
@@ -80,39 +80,39 @@
                     placeholder="votre sujet *" />
 
                     <div *ngIf="submitted && f.sujet.errors" class="invalid-feedback">
-                      <div *ngIf="f.sujet.errors.required">Le champ sujet est important !!!</div>                     
+                      <div *ngIf="f.sujet.errors.required">Le champ sujet est important !!!</div>
                     </div>
                 </div>
 
-                
+
               </div>
             </div>
 
             <div class="card mb-4 py-3 border-left-primary">
-              <div class="card-body">              
-     
-                <textarea rows="5" cols="33" class="form-control" [(ngModel)] = "ObjetFormCotact.description" formControlName="description"  placeholder="description de mail *" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" ></textarea> 
-                
+              <div class="card-body">
+
+                <textarea rows="5" cols="33" class="form-control" [(ngModel)] = "ObjetFormCotact.description" formControlName="description"  placeholder="description de mail *" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" ></textarea>
+
                 <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
-                  <div *ngIf="f.description.errors.required">Le champ description est important !!!</div>                
+                  <div *ngIf="f.description.errors.required">Le champ description est important !!!</div>
                 </div>
-          
+
               </div>
 
-               
+
               </div>
-           
+
 
 
 
             <div class="control-group form-group">
 
-              <div #recaptcha></div>
+              <!--<div #recaptcha></div>-->
 
             </div>
 
             <div class="alert alert-danger"  *ngIf="isErreurCaptcha">
-    
+
               <strong>Erreur!</strong>  Veuillez valider votre captcha
             </div>
 

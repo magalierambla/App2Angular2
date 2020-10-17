@@ -1,1 +1,0 @@
-{"result":{"text":"R open parentheses x close parentheses equals 34 x"},"status":"ok"}

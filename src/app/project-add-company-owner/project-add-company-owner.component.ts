@@ -27,7 +27,7 @@ declare var window: any;
 })
 export class ProjectAddCompanyOwnerComponent implements OnInit {
 
-  @ViewChild('recaptcha', {static: true}) recaptchaElement: ElementRef;
+  //@ViewChild('recaptcha', {static: true}) recaptchaElement: ElementRef;
 
   public infosUser: UserModel = new UserModel();
 
@@ -165,7 +165,7 @@ export class ProjectAddCompanyOwnerComponent implements OnInit {
       //  contrePartieProject: ['', Validators.required],
     });
 
-    this.addRecaptchaScript();
+    //this.addRecaptchaScript();
 
     this.getListCategorieProject();
 
@@ -178,7 +178,7 @@ export class ProjectAddCompanyOwnerComponent implements OnInit {
   }
 
 
-  addRecaptchaScript() {
+  /*addRecaptchaScript() {
 
     window.grecaptchaCallback = () => {
       this.renderReCaptcha();
@@ -209,7 +209,7 @@ export class ProjectAddCompanyOwnerComponent implements OnInit {
         this.isErreurCaptcha = false;
       }
     });
-  }
+  }*/
 
   addEventDateLimiteCollecte(event) {
 

@@ -211,7 +211,7 @@
                               <div *ngIf="submitted && f.montantMinimunProject.errors" class="invalid-feedback">
 
                                 <div *ngIf="f.montantMinimunProject.errors.required">Le format champ montant est  invalide !!!</div>
-                                <div *ngIf="f.montantMinimunProject.errors.min" >Le montant doit étre non nul !!!</div>   
+                                <div *ngIf="f.montantMinimunProject.errors.min" >Le montant doit étre non nul !!!</div>
 
                               </div>
                             </div>
@@ -227,7 +227,7 @@
                             <div class="form-group">
 
                               <label>Date limite de collecte de projet * </label><br />
-                             
+
                               <dp-date-picker class="dp_date_picker" [(ngModel)]="ObjetProject.date_limite_collecte"  formControlName="dateLimitCollectProject"     [ngClass]="{ 'is-invalid': submitted && f.montantMinimunProject.errors }"         [config]="datePickerConfig"></dp-date-picker>
 
                               <div *ngIf="submitted && f.dateLimitCollectProject.errors"      style="font-size: 80%;color: #e74a3b;">
@@ -326,7 +326,7 @@
 
                         <div class="control-group form-group">
 
-                          <div #recaptcha></div>
+                         <!-- <div #recaptcha></div>-->
 
                         </div>
 

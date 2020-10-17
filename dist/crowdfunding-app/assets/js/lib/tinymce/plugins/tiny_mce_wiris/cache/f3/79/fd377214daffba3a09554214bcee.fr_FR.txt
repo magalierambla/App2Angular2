@@ -1,1 +1,0 @@
-{"result":{"text":"x au carré moins 20 x plus 200 égal à 500"},"status":"ok"}

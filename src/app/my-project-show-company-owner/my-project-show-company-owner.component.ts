@@ -30,7 +30,7 @@ declare var window: any;
 })
 export class MyProjectShowCompanyOwnerComponent implements OnInit {
 
-   @ViewChild('recaptcha', {static: true }) recaptchaElement: ElementRef;
+   //@ViewChild('recaptcha', {static: true }) recaptchaElement: ElementRef;
 
    public infosUser: UserModel = new UserModel();
 
@@ -248,7 +248,7 @@ public options: Object = {
 
        });
 
-      this.addRecaptchaScript();
+      //this.addRecaptchaScript();
 
    }
 
@@ -257,7 +257,7 @@ public options: Object = {
       Swal.fire(message);
    }
 
-   addRecaptchaScript() {
+   /*addRecaptchaScript() {
 
       window.grecaptchaCallback = () => {
         this.renderReCaptcha();
@@ -284,7 +284,7 @@ public options: Object = {
             this.isErreurCaptcha = false;
         }
       });
-    }
+    }*/
 
    get f() { return this.addNewsProjectForm.controls; }
 

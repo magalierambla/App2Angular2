@@ -1,1 +1,0 @@
-{"result":{"text":"e puissance i pi divisé par 6 fin de l'exposant"},"status":"ok"}

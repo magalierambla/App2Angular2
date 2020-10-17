@@ -1,1 +1,0 @@
-{"result":{"text":"x égal à 86"},"status":"ok"}

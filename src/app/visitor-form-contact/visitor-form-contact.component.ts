@@ -14,7 +14,7 @@ declare var window: any;
 })
 export class VisitorFormContactComponent implements OnInit {
 
-  @ViewChild('recaptcha', {static: true }) recaptchaElement: ElementRef;
+  //@ViewChild('recaptcha', {static: true }) recaptchaElement: ElementRef;
 
   public ObjetFormCotact: FormContactModel = new FormContactModel();
 
@@ -38,12 +38,12 @@ export class VisitorFormContactComponent implements OnInit {
                                              description: ['', Validators.required]
                                               });
 
-    this.addRecaptchaScript();
+    //this.addRecaptchaScript();
    }
 
    get f() { return this.contactForm.controls; }
 
-  addRecaptchaScript() {
+  /*addRecaptchaScript() {
 
     window.grecaptchaCallback = () => {
       this.renderReCaptcha();
@@ -70,11 +70,11 @@ export class VisitorFormContactComponent implements OnInit {
           this.isErreurCaptcha = false;
       }
     });
-  }
+  }*/
 
   onFormSubmitContact(){
 
-   
+
 
    this.submitted = true;
 

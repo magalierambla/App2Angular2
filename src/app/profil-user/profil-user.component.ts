@@ -18,7 +18,7 @@ declare var window: any;
 })
 export class ProfilUserComponent implements OnInit {
 
-  @ViewChild('recaptcha', { static: true }) recaptchaElement: ElementRef;
+ // @ViewChild('recaptcha', { static: true }) recaptchaElement: ElementRef;
 
   public infosUser: UserModel = new UserModel();
 
@@ -97,7 +97,7 @@ export class ProfilUserComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.addRecaptchaScript();
+   // this.addRecaptchaScript();
 
     const date = new Date();
 
@@ -114,7 +114,7 @@ export class ProfilUserComponent implements OnInit {
 
   }
 
-  addRecaptchaScript() {
+  /*addRecaptchaScript() {
 
     window.grecaptchaCallback = () => {
       this.renderReCaptcha();
@@ -141,7 +141,7 @@ export class ProfilUserComponent implements OnInit {
         this.isErreurCaptcha = false;
       }
     });
-  }
+  }*/
 
   onFormSubmitUpdateProfil() {
 

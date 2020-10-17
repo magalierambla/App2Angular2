@@ -15,7 +15,7 @@ declare var window: any;
 })
 export class IdentificationAdminComponent implements OnInit {
 
-  @ViewChild('recaptcha', {static: true }) recaptchaElement: ElementRef;
+  //@ViewChild('recaptcha', {static: true }) recaptchaElement: ElementRef;
 
 
 
@@ -23,7 +23,7 @@ export class IdentificationAdminComponent implements OnInit {
                   emailLogin : '',
                   passwordLogin : ''
    };
-   
+
 
     public infosUser = {
                         id : '',
@@ -43,7 +43,7 @@ export class IdentificationAdminComponent implements OnInit {
   public isErreurLogin = false;
 
 
-  public isvalidLogin = false; 
+  public isvalidLogin = false;
 
   private isvalidCaptcha = false ;
 
@@ -67,7 +67,7 @@ export class IdentificationAdminComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.addRecaptchaScript();
+   // this.addRecaptchaScript();
 
     const date = new Date();
 
@@ -75,7 +75,7 @@ export class IdentificationAdminComponent implements OnInit {
 
 
 
-  addRecaptchaScript() {
+  /*addRecaptchaScript() {
 
     window.grecaptchaCallback = () => {
       this.renderReCaptcha();
@@ -102,7 +102,7 @@ export class IdentificationAdminComponent implements OnInit {
           this.isErreurCaptcha = false;
       }
     });
-  }
+  }*/
 
   public onFormSubmitLogin() {
 
