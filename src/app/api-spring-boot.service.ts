@@ -39,7 +39,8 @@ export class apiHttpSpringBootService {
 
   // tslint:disable-next-line:max-line-length
   // private apiUrlCloud = 'https://api-spring-boot-h2-database.herokuapp.com/api';
-  private apiUrlCloud = 'http://localhost:8080/api';
+  //private apiUrlCloud = 'http://localhost:8080/api';
+  private apiUrlCloud = 'http://ec2-18-218-20-84.us-east-2.compute.amazonaws.com:8080/api';
 
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {

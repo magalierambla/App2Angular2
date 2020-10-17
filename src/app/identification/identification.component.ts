@@ -20,7 +20,7 @@ declare var window: any;
 })
 export class IdentificationComponent implements OnInit {
 
-  @ViewChild('recaptcha', {static: true}) recaptchaElement: ElementRef;
+  //@ViewChild('recaptcha', {static: true}) recaptchaElement: ElementRef;
 
   datePickerConfig = {
     drops: 'up',
@@ -78,7 +78,7 @@ export class IdentificationComponent implements OnInit {
 
     /********************************************************* */
 
-    this.addRecaptchaScript();
+    //this.addRecaptchaScript();
 
     const date = new Date();
 
@@ -120,7 +120,7 @@ export class IdentificationComponent implements OnInit {
 
   }
 
-  addRecaptchaScript() {
+  /*addRecaptchaScript() {
 
     window.grecaptchaCallback = () => {
       this.renderReCaptcha();
@@ -138,9 +138,9 @@ export class IdentificationComponent implements OnInit {
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'recaptcha-jssdk', this));
 
-  }
+  }*/
 
-  renderReCaptcha() {
+  /*renderReCaptcha() {
     window.grecaptcha.render(this.recaptchaElement.nativeElement, {
       sitekey: '6Lf4I6gZAAAAAMp1E9YI1FJghdQ20CNRtAV9d55y',
       callback: (response) => {
@@ -151,7 +151,7 @@ export class IdentificationComponent implements OnInit {
         this.isErreurCaptcha = false;
       }
     });
-  }
+  }*/
 
   public onFormSubmitLogin() {
 
