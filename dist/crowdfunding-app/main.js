@@ -2018,7 +2018,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const _c0 = ["recaptcha"];
 class CaptchaIdentificationUserComponent {
     constructor(route, router, apiService, cookie, datePipe, ngxService) {
         this.route = route;
@@ -2027,6 +2026,7 @@ class CaptchaIdentificationUserComponent {
         this.cookie = cookie;
         this.datePipe = datePipe;
         this.ngxService = ngxService;
+        //@ViewChild('recaptcha', { static: true }) recaptchaElement: ElementRef;
         this.ObjetLogin = {
             emailLogin: '',
             passwordLogin: ''
@@ -2055,33 +2055,34 @@ class CaptchaIdentificationUserComponent {
         }
     }
     ngOnInit() {
-        this.addRecaptchaScript();
+        // this.addRecaptchaScript();
     }
-    addRecaptchaScript() {
-        window.grecaptchaCallback = () => {
-            this.renderReCaptcha();
-        };
-        (function (d, s, id, obj) {
-            let js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {
-                obj.renderReCaptcha();
-                return;
-            }
-            js = d.createElement(s);
-            js.id = id;
-            js.src = 'https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&amp;render=explicit';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'recaptcha-jssdk', this));
-    }
-    renderReCaptcha() {
-        window.grecaptcha.render(this.recaptchaElement.nativeElement, {
-            sitekey: '6Lf4I6gZAAAAAMp1E9YI1FJghdQ20CNRtAV9d55y',
-            callback: (response) => {
-                console.log('response', response);
-                this.onFormSubmitLogin();
-            }
-        });
-    }
+    /*addRecaptchaScript() {
+  
+      window.grecaptchaCallback = () => {
+        this.renderReCaptcha();
+      };
+  
+      (function(d, s, id, obj) {
+        let js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { obj.renderReCaptcha(); return; }
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&amp;render=explicit';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'recaptcha-jssdk', this));
+  
+    }*/
+    /*renderReCaptcha() {
+      window.grecaptcha.render(this.recaptchaElement.nativeElement, {
+        sitekey: '6Lf4I6gZAAAAAMp1E9YI1FJghdQ20CNRtAV9d55y',
+        callback: (response) => {
+          console.log('response', response);
+  
+          this.onFormSubmitLogin();
+  
+        }
+      });
+    }*/
     onFormSubmitLogin() {
         this.ngxService.start();
         this.apiService.identificationUser(this.ObjetLogin).subscribe((data) => {
@@ -2115,20 +2116,13 @@ class CaptchaIdentificationUserComponent {
     }
 }
 CaptchaIdentificationUserComponent.ɵfac = function CaptchaIdentificationUserComponent_Factory(t) { return new (t || CaptchaIdentificationUserComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_api_spring_boot_service__WEBPACK_IMPORTED_MODULE_2__["apiHttpSpringBootService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_ui_loader__WEBPACK_IMPORTED_MODULE_5__["NgxUiLoaderService"])); };
-CaptchaIdentificationUserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CaptchaIdentificationUserComponent, selectors: [["app-captcha-identification-user"]], viewQuery: function CaptchaIdentificationUserComponent_Query(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵstaticViewQuery"](_c0, true);
-    } if (rf & 2) {
-        var _t;
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.recaptchaElement = _t.first);
-    } }, decls: 8, vars: 0, consts: [[1, "container", "login-container"], [1, "row"], [1, "col-md-5", "login-form-1"], [1, "col-md-7", "login-form-1"], [1, "control-group", "form-group", 2, "margin-top", "25%"], ["recaptcha", ""]], template: function CaptchaIdentificationUserComponent_Template(rf, ctx) { if (rf & 1) {
+CaptchaIdentificationUserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CaptchaIdentificationUserComponent, selectors: [["app-captcha-identification-user"]], decls: 6, vars: 0, consts: [[1, "container", "login-container"], [1, "row"], [1, "col-md-5", "login-form-1"], [1, "col-md-7", "login-form-1"], [1, "control-group", "form-group", 2, "margin-top", "25%"]], template: function CaptchaIdentificationUserComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "ngx-ui-loader");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "div", null, 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -2140,10 +2134,7 @@ CaptchaIdentificationUserComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODUL
                 templateUrl: './captcha-identification-user.component.html',
                 styleUrls: ['./captcha-identification-user.component.css']
             }]
-    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }, { type: _api_spring_boot_service__WEBPACK_IMPORTED_MODULE_2__["apiHttpSpringBootService"] }, { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }, { type: _angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"] }, { type: ngx_ui_loader__WEBPACK_IMPORTED_MODULE_5__["NgxUiLoaderService"] }]; }, { recaptchaElement: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
-            args: ['recaptcha', { static: true }]
-        }] }); })();
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }, { type: _api_spring_boot_service__WEBPACK_IMPORTED_MODULE_2__["apiHttpSpringBootService"] }, { type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"] }, { type: _angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"] }, { type: ngx_ui_loader__WEBPACK_IMPORTED_MODULE_5__["NgxUiLoaderService"] }]; }, null); })();
 
 
 /***/ }),

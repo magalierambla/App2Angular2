@@ -15,7 +15,7 @@ declare var window: any;
 })
 export class CaptchaIdentificationUserComponent implements OnInit {
 
-  @ViewChild('recaptcha', { static: true }) recaptchaElement: ElementRef;
+  //@ViewChild('recaptcha', { static: true }) recaptchaElement: ElementRef;
 
   public ObjetLogin = {
                      emailLogin: '',
@@ -60,11 +60,11 @@ export class CaptchaIdentificationUserComponent implements OnInit {
 
   ngOnInit(): void {
 
-     this.addRecaptchaScript();
+    // this.addRecaptchaScript();
 
  }
 
-  addRecaptchaScript() {
+  /*addRecaptchaScript() {
 
     window.grecaptchaCallback = () => {
       this.renderReCaptcha();
@@ -78,9 +78,9 @@ export class CaptchaIdentificationUserComponent implements OnInit {
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'recaptcha-jssdk', this));
 
-  }
+  }*/
 
-  renderReCaptcha() {
+  /*renderReCaptcha() {
     window.grecaptcha.render(this.recaptchaElement.nativeElement, {
       sitekey: '6Lf4I6gZAAAAAMp1E9YI1FJghdQ20CNRtAV9d55y',
       callback: (response) => {
@@ -90,7 +90,7 @@ export class CaptchaIdentificationUserComponent implements OnInit {
 
       }
     });
-  }
+  }*/
 
   public onFormSubmitLogin() {
 
