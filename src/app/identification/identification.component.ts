@@ -210,7 +210,7 @@ export class IdentificationComponent implements OnInit {
 
     }
 
-    if (this.isErreurInscription) {
+    if (!this.isErreurInscription) {
 
       this.ngxService.start();
 

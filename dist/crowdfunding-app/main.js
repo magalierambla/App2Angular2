@@ -2680,7 +2680,7 @@ class IdentificationComponent {
         else {
             this.ObjetInscription.photoUser = './assets/img/users/user_f.png';
         }
-        if (this.isErreurInscription) {
+        if (!this.isErreurInscription) {
             this.ngxService.start();
             this.apiService.inscriptionUser(this.ObjetInscription).subscribe((dataUser) => {
                 if (!dataUser) {
