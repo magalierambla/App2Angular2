@@ -47,7 +47,7 @@ export class IdentificationComponent implements OnInit {
 
   public isvalidInscription = false;
 
-  private isvalidCaptcha = false;
+  //private isvalidCaptcha = false;
 
   public isErreurCaptcha = false;
 
@@ -210,7 +210,7 @@ export class IdentificationComponent implements OnInit {
 
     }
 
-    if (this.isvalidCaptcha && !this.isErreurInscription) {
+    if (!this.isErreurInscription) {
 
       this.ngxService.start();
 

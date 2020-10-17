@@ -2582,7 +2582,7 @@ class IdentificationComponent {
         this.isErreurInscription = false;
         this.isvalidLogin = false;
         this.isvalidInscription = false;
-        this.isvalidCaptcha = false;
+        //private isvalidCaptcha = false;
         this.isErreurCaptcha = false;
         this.events = [];
         this.titleService.setTitle('Identification-inscription');
@@ -2680,7 +2680,7 @@ class IdentificationComponent {
         else {
             this.ObjetInscription.photoUser = './assets/img/users/user_f.png';
         }
-        if (this.isvalidCaptcha && !this.isErreurInscription) {
+        if (!this.isErreurInscription) {
             this.ngxService.start();
             this.apiService.inscriptionUser(this.ObjetInscription).subscribe((dataUser) => {
                 if (!dataUser) {
