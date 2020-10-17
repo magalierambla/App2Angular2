@@ -49,7 +49,7 @@ export class IdentificationComponent implements OnInit {
 
   //private isvalidCaptcha = false;
 
-  public isErreurCaptcha = false;
+  //public isErreurCaptcha = false;
 
   events: string[] = [];
 

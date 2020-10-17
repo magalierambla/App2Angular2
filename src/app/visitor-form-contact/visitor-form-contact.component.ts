@@ -20,7 +20,7 @@ export class VisitorFormContactComponent implements OnInit {
 
   private isvalidCaptcha = false ;
 
-  public isErreurCaptcha = false;
+  //public isErreurCaptcha = false;
 
   public successSendMessage = false;
 
@@ -78,11 +78,11 @@ export class VisitorFormContactComponent implements OnInit {
 
    this.submitted = true;
 
-   if (!this.isvalidCaptcha){
+   //if (!this.isvalidCaptcha){
 
-       this.isErreurCaptcha = true;
+     //  this.isErreurCaptcha = true;
 
-   }
+   //}
 
         // stop here if form is invalid
    if (this.contactForm.invalid) {

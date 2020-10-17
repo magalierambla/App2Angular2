@@ -47,7 +47,7 @@ export class IdentificationAdminComponent implements OnInit {
 
   private isvalidCaptcha = false ;
 
-  public isErreurCaptcha = false;
+  //public isErreurCaptcha = false;
 
   events: string[] = [];
 

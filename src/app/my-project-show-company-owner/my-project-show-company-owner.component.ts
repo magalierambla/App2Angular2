@@ -185,7 +185,7 @@ public options: Object = {
 
  private isvalidCaptcha = false ;
 
- public isErreurCaptcha = false;
+ //public isErreurCaptcha = false;
 
  public imageFileNews: File;
 

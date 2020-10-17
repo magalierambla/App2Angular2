@@ -44,7 +44,7 @@ export class ProfilUserComponent implements OnInit {
 
   private isvalidCaptcha = false;
 
-  public isErreurCaptcha = false;
+  //public isErreurCaptcha = false;
 
   constructor(private router: Router, private cookie: CookieService, private apiService: apiHttpSpringBootService,
               private titleService: Title, private imageService: ImageService, private ngxService: NgxUiLoaderService) {
@@ -172,13 +172,13 @@ export class ProfilUserComponent implements OnInit {
 
       });
 
-      this.isErreurCaptcha = false;
+      //this.isErreurCaptcha = false;
 
       this.ngxService.stop();
 
     } else {
 
-      this.isErreurCaptcha = true;
+      //this.isErreurCaptcha = true;
     }
 
 

@@ -37,7 +37,7 @@ export class ProjectAddCompanyOwnerComponent implements OnInit {
 
   private isvalidCaptcha = false;
 
-  public isErreurCaptcha = false;
+  //public isErreurCaptcha = false;
 
   public photosProject: Array<ImageProjectModel> = [];
 
@@ -275,10 +275,10 @@ export class ProjectAddCompanyOwnerComponent implements OnInit {
 
   onFormSubmitAddProject() {
     this.submitted = true;
-    if (!this.isvalidCaptcha) {
+    //if (!this.isvalidCaptcha) {
 
-      this.isErreurCaptcha = true;
-    }
+      //this.isErreurCaptcha = true;
+    //}
     if (this.ObjetProject.contrePartieProject === undefined) {
 
       this.checkContrePartie = true;

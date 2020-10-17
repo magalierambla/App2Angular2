@@ -59,7 +59,7 @@ export class ProjectEditCompanyOwnerComponent implements OnInit {
 
   private isvalidCaptcha = true ;  // test
 
-  public isErreurCaptcha = false;
+ // public isErreurCaptcha = false;
 
   public isErreurValidProject = false;
 
@@ -344,10 +344,10 @@ export class ProjectEditCompanyOwnerComponent implements OnInit {
       this.ObjetProject.contrePartieProject = 'Je ne sais pas encore';
     }
 
-   if (!this.isvalidCaptcha){
+   //if (!this.isvalidCaptcha){
 
-       this.isErreurCaptcha = true;
-    }
+     //  this.isErreurCaptcha = true;
+   // }
 
    if (this.ObjetProject.contrePartieProject === undefined){
 
