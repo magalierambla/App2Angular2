@@ -1,1 +1,0 @@
-{"result":{"text":"au cube racine de 2 x plus 4 fin de racine"},"status":"ok"}
