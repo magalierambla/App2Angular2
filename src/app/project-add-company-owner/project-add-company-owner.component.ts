@@ -35,7 +35,7 @@ export class ProjectAddCompanyOwnerComponent implements OnInit {
 
   public statutProject: StatutProjectModel = new StatutProjectModel();
 
-  private isvalidCaptcha = false;
+  //private isvalidCaptcha = false;
 
   //public isErreurCaptcha = false;
 
@@ -289,7 +289,7 @@ export class ProjectAddCompanyOwnerComponent implements OnInit {
       return;
     }
 
-    if (this.ObjetProject.contrePartieProject && this.isvalidCaptcha && !this.checkContrePartie) {
+    if (this.ObjetProject.contrePartieProject && !this.checkContrePartie) {
 
       this.ObjetProject.total_fonds = 0;
 

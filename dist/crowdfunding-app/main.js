@@ -9383,7 +9383,7 @@ class ProjectAddCompanyOwnerComponent {
         this.infosUser = new _interfaces_models__WEBPACK_IMPORTED_MODULE_1__["UserModel"]();
         this.ObjetProject = new _interfaces_models__WEBPACK_IMPORTED_MODULE_1__["ProjectModel"]();
         this.statutProject = new _interfaces_models__WEBPACK_IMPORTED_MODULE_1__["StatutProjectModel"]();
-        this.isvalidCaptcha = false;
+        //private isvalidCaptcha = false;
         //public isErreurCaptcha = false;
         this.photosProject = [];
         this.isErreurValidProject = false;
@@ -9539,7 +9539,7 @@ class ProjectAddCompanyOwnerComponent {
         if (this.addProjectForm.invalid) {
             return;
         }
-        if (this.ObjetProject.contrePartieProject && this.isvalidCaptcha && !this.checkContrePartie) {
+        if (this.ObjetProject.contrePartieProject && !this.checkContrePartie) {
             this.ObjetProject.total_fonds = 0;
             this.apiService.addProjectByCompanyOwner(this.ObjetProject).subscribe((data) => {
                 console.log(data.id);
