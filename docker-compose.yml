@@ -1,0 +1,46 @@
+# Run : docker-compose -f docker-compose.prod.yml build
+# Run : docker-compose up --build -d
+version: '3.7'
+
+services:
+
+  frontend-svc:
+    container_name: frontend-ctn
+    image: crowdlending-front
+    build:
+      context: ../App2Angular2
+    ports:
+      - "4200:80"
+    depends_on:
+      - api-svc
+    networks:
+      - app-network
+
+  api-svc:
+    container_name: api-ctn
+    image: crowdlending-api
+    build:
+      context: ../App2Java2
+    depends_on:
+      - mysql-svc
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+  mysql-svc:
+    container_name: mysql-ctn
+    image: mysql
+    environment:
+      - MYSQL_DATABASE=app_crowdfunding2
+      - MYSQL_USER=crowd
+      - MYSQL_PASSWORD=crowdA11z!
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3306:3306"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
