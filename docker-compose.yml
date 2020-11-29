@@ -20,7 +20,7 @@ services:
     container_name: api-ctn
     image: crowdlending-api
     build:
-      context: ../App2Java2
+      context: ../App2Java2_master
     depends_on:
       - mysql-svc
     ports:
